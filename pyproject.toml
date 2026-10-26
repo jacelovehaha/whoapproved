@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whoapproved"
+version = "0.1.0"
+description = "Flight recorder and approval auditor for multi-agent systems: reconstruct who did what, on whose authority."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "jacelovehaha" }]
+keywords = ["ai-agents", "multi-agent", "audit", "mcp", "governance", "agent-security", "observability"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: System :: Logging",
+]
+
+[project.scripts]
+whoapproved = "whoapproved.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
