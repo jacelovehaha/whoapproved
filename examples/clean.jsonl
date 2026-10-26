@@ -1,0 +1,10 @@
+{"ts": "2026-10-27T09:00:00Z", "session": "clean-001", "agent": "user", "type": "message", "to": "lead", "text": "Research suppliers and write a summary in the workspace."}
+{"ts": "2026-10-27T09:00:01Z", "session": "clean-001", "agent": "lead", "type": "session_start"}
+{"ts": "2026-10-27T09:00:02Z", "session": "clean-001", "agent": "user", "type": "human_approval", "approved_by": "kevin", "scope": ["fs.write"], "note": "May write the summary file in the workspace."}
+{"ts": "2026-10-27T09:00:03Z", "session": "clean-001", "agent": "lead", "type": "delegation", "to_agent": "researcher", "task": "Collect supplier pages"}
+{"ts": "2026-10-27T09:00:04Z", "session": "clean-001", "agent": "researcher", "type": "tool_call", "tool": "http.get", "args": {"url": "https://example.com/suppliers"}, "data_class": "public"}
+{"ts": "2026-10-27T09:00:05Z", "session": "clean-001", "agent": "researcher", "type": "tool_result", "tool": "http.get"}
+{"ts": "2026-10-27T09:00:06Z", "session": "clean-001", "agent": "researcher", "type": "tool_call", "tool": "fs.read", "args": {"path": "workspace/notes.md"}, "data_class": "internal"}
+{"ts": "2026-10-27T09:00:07Z", "session": "clean-001", "agent": "lead", "type": "tool_call", "tool": "fs.write", "args": {"path": "workspace/summary.md"}, "data_class": "internal"}
+{"ts": "2026-10-27T09:00:08Z", "session": "clean-001", "agent": "lead", "type": "usage", "tokens": 15200, "cost_usd": 0.031}
+{"ts": "2026-10-27T09:00:09Z", "session": "clean-001", "agent": "lead", "type": "message", "to": "user", "text": "Summary written to workspace/summary.md"}
